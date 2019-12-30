@@ -10,7 +10,7 @@ class GroceryListItem extends React.Component {
     };
   }
 
-  onHover() {
+  hover() {
     this.setState({
       hover: !this.state.hover
     });
@@ -21,8 +21,8 @@ class GroceryListItem extends React.Component {
       fontWeight: this.state.hover ? 'bold' : 'normal'
     };
     return <li style={style} 
-      onMouseEnter={this.onHover.bind(this)} 
-      onMouseLeave={this.onHover.bind(this)}>
+      onMouseEnter={this.hover.bind(this)} 
+      onMouseLeave={this.hover.bind(this)}>
         {this.props.item}
       </li>
   }
@@ -43,6 +43,4 @@ var GroceryList = (props) => (
   </ul>
 );
 
-setInterval(() => {
-  ReactDOM.render(<App />, document.getElementById("app"))
-}, 100);
+ReactDOM.render(<App />, document.getElementById("app"))
